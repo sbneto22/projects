@@ -3,7 +3,7 @@ let form = document.querySelector("form");
 let textForm = document.getElementById("textForm");
 let textEmail = document.getElementById("textEmail");
 let textPassword = document.getElementById("textPassword");
-
+let error = document.getElementById("error")
 
 form.addEventListener("submit" , (e) => {
     if(email.value == "" && password.value == "") {
@@ -21,12 +21,14 @@ form.addEventListener("submit" , (e) => {
         console.log("Not Request");
     }
     
-    e.preventDefault();
+    e.preventDefault()
+
 });
 
 email.addEventListener("keyup", () => {
     if(validatorEmail(email.value) !== true) {
         textEmail.textContent = "Invalid email address";
+        
     } else {
     textEmail.textContent = "";
 
@@ -49,4 +51,26 @@ function validatorEmail(email) {
 function validatorPassword(password) {
     let passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^$*])[a-zA-Z0-9!@#$%^$*]{6,16}$/;
     return passwordPattern.test(password)
+}
+
+const campos = document.querySelectorAll('.required');
+
+function setError(index){
+    campos[index].style.border = '2px solid #e63636';
+}
+
+function removeError(index){
+    campos[index].style.border = '';
+}
+
+function nameValidate(){
+    if(campos[0].value.length < "8")
+{
+    setError(0);
+}
+    else
+{
+    removeError(0)
+
+}
 }

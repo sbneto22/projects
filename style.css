@@ -79,9 +79,10 @@ div{
 .card-group >input{
     border-radius: 5px;
     outline: 0;
+    display: block;
     width: 96%;
     height: 25px;
-    border: 1px solid rgb(199, 199, 199);
+    border: 1px solid rgb(199, 198, 198);
     padding: 5px; padding-left: 8px;
 
 }
@@ -94,10 +95,12 @@ div{
     cursor: pointer;
 
 }
-.textpassword{
-    color: brown;
+.card-group small{
+    color: rgb(255, 0, 0);
 
 }
+
+
 a:link{
     text-decoration: none;
 
@@ -119,6 +122,11 @@ a:link{
     border-radius: 5px;
     padding: 12px;
     cursor: pointer;    
+
+}
+.btt2 >small {
+    color: red;
+    padding-left: 100px;
 
 }
 .check2{
